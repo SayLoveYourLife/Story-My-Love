@@ -1,10 +1,28 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function GardenPage() {
   const audioRef = useRef(null);
   const [opened, setOpened] = useState([false, false, false]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (audio) {
+      audio.volume = 0.5;
+
+      const tryPlay = async () => {
+        try {
+          await audio.play();
+        } catch (e) {
+          console.log("Autoplay blocked");
+        }
+      };
+
+      tryPlay();
+    }
+  }, []);
 
   const toggleCard = (index) => {
     const updated = [...opened];
@@ -28,7 +46,11 @@ export default function GardenPage() {
       }}
     >
       {/* музыка */}
-      <audio ref={audioRef} loop>
+      <audio
+        ref={audioRef}
+        autoPlay
+        loop
+      >
         <source
           src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8e2b4f7.mp3?filename=romantic-piano-112194.mp3"
           type="audio/mpeg"
@@ -128,30 +150,6 @@ export default function GardenPage() {
           <br />
           остаются внутри нас.
         </p>
-
-        {/* музыка */}
-        <button
-          onClick={() => {
-            audioRef.current.volume = 0.5;
-            audioRef.current.play();
-          }}
-          style={{
-            marginTop: "45px",
-            padding: "18px 42px",
-            borderRadius: "999px",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "20px",
-            background:
-              "linear-gradient(135deg, #ffffff 0%, #ffdbe8 100%)",
-            color: "#7b4d5d",
-            boxShadow:
-              "0 15px 35px rgba(255,182,193,0.35)",
-            transition: "0.3s",
-          }}
-        >
-          🎹 включить музыку
-        </button>
       </div>
 
       {/* карточки */}

@@ -19,9 +19,9 @@ export default function GardenPage() {
         overflow: "hidden",
         position: "relative",
         background: `
-          radial-gradient(circle at top, #ffe4ee 0%, transparent 30%),
-          radial-gradient(circle at bottom right, #fff4f8 0%, transparent 35%),
-          linear-gradient(180deg, #fffdfd 0%, #fff3f7 45%, #fff8f2 100%)
+          radial-gradient(circle at top, #ffe8f0 0%, transparent 30%),
+          radial-gradient(circle at bottom right, #fff6fa 0%, transparent 35%),
+          linear-gradient(180deg, #fffdfd 0%, #fff1f6 45%, #fff7f2 100%)
         `,
         fontFamily: "serif",
         padding: "60px 25px",
@@ -31,47 +31,48 @@ export default function GardenPage() {
       <audio
         ref={audioRef}
         loop
-        src="https://files.catbox.moe/8h2m7v.mp3"
+        src="https://files.catbox.moe/0r4h8w.mp3"
       />
 
       {/* glow */}
       <div
         style={{
           position: "absolute",
-          width: "800px",
-          height: "800px",
+          width: "900px",
+          height: "900px",
           background: "rgba(255,192,203,0.25)",
           borderRadius: "50%",
-          filter: "blur(130px)",
-          top: "-300px",
-          left: "-200px",
+          filter: "blur(140px)",
+          top: "-350px",
+          left: "-250px",
         }}
       />
 
       <div
         style={{
           position: "absolute",
-          width: "600px",
-          height: "600px",
+          width: "700px",
+          height: "700px",
           background: "rgba(255,255,255,0.9)",
           borderRadius: "50%",
-          filter: "blur(100px)",
+          filter: "blur(110px)",
           bottom: "-250px",
           right: "-150px",
         }}
       />
 
       {/* цветы */}
-      {Array.from({ length: 25 }).map((_, i) => (
+      {Array.from({ length: 45 }).map((_, i) => (
         <div
           key={i}
           style={{
             position: "absolute",
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
-            fontSize: `${30 + Math.random() * 70}px`,
-            opacity: 0.12,
+            fontSize: `${30 + Math.random() * 80}px`,
+            opacity: 0.14,
             userSelect: "none",
+            transform: `rotate(${Math.random() * 360}deg)`,
           }}
         >
           🌸
@@ -84,7 +85,7 @@ export default function GardenPage() {
           position: "relative",
           zIndex: 2,
           textAlign: "center",
-          marginTop: "30px",
+          marginTop: "20px",
         }}
       >
         <p
@@ -100,11 +101,11 @@ export default function GardenPage() {
 
         <h1
           style={{
-            fontSize: "92px",
+            fontSize: "96px",
             fontWeight: "400",
             color: "#52343e",
             lineHeight: "1.1",
-            marginTop: "25px",
+            marginTop: "20px",
           }}
         >
           Сад
@@ -114,7 +115,7 @@ export default function GardenPage() {
 
         <p
           style={{
-            marginTop: "30px",
+            marginTop: "25px",
             fontSize: "28px",
             color: "#795963",
             lineHeight: "1.8",
@@ -142,9 +143,10 @@ export default function GardenPage() {
             color: "#7b4d5d",
             boxShadow:
               "0 15px 35px rgba(255,182,193,0.35)",
+            transition: "0.3s",
           }}
         >
-          🎵 включить музыку
+          🎹 включить музыку
         </button>
       </div>
 
@@ -155,9 +157,9 @@ export default function GardenPage() {
           zIndex: 2,
           marginTop: "100px",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
           gap: "35px",
-          maxWidth: "1200px",
+          maxWidth: "1300px",
           marginLeft: "auto",
           marginRight: "auto",
         }}
@@ -166,25 +168,25 @@ export default function GardenPage() {
           {
             title: "🌸 первая мысль",
             hidden:
-              "Ты появилась неожиданно. И почему-то сразу осталась.",
+              "Я подумал что ты выскочка 😭🤣",
           },
           {
             title: "💌 случайность",
             hidden:
-              "Иногда одна переписка меняет больше, чем годы.",
+              "Тогда в маленькой библиотеке ты случайно или специально легла ко мне на колени и заснула.",
           },
           {
             title: "✨ чувство",
             hidden:
-              "Есть люди, рядом с которыми даже молчание становится уютным.",
+              "Сначала были смешанные чувства, а теперь по большей части привязанность и ощущение влюблённости.",
           },
         ].map((card, index) => (
           <div
             key={index}
             onClick={() => toggleCard(index)}
             style={{
-              padding: "40px",
-              borderRadius: "35px",
+              padding: "42px",
+              borderRadius: "38px",
               background: "rgba(255,255,255,0.45)",
               backdropFilter: "blur(18px)",
               border: "1px solid rgba(255,255,255,0.7)",
@@ -208,34 +210,34 @@ export default function GardenPage() {
             <p
               style={{
                 fontSize: "22px",
-                lineHeight: "1.8",
+                lineHeight: "1.9",
                 color: "#7b5c65",
               }}
             >
               {opened[index]
                 ? card.hidden
-                : "нажми, чтобы открыть воспоминание"}
+                : "нажми, чтобы открыть"}
             </p>
           </div>
         ))}
       </div>
 
-      {/* письмо */}
+      {/* кнопка */}
       <div
         style={{
           position: "relative",
           zIndex: 2,
-          marginTop: "110px",
+          marginTop: "120px",
           textAlign: "center",
         }}
       >
-        <a
-          href="/letter"
+        <button
+          onClick={() => alert("🌸 секрет откроется чуть позже...")}
           style={{
-            display: "inline-block",
             padding: "24px 65px",
             borderRadius: "999px",
-            textDecoration: "none",
+            border: "none",
+            cursor: "pointer",
             fontSize: "24px",
             color: "#7c5060",
             background:
@@ -244,8 +246,8 @@ export default function GardenPage() {
               "0 20px 45px rgba(255,182,193,0.35)",
           }}
         >
-          💌 открыть письмо
-        </a>
+          ✨ узнать секрет
+        </button>
       </div>
     </main>
   );

@@ -28,11 +28,12 @@ export default function GardenPage() {
       }}
     >
       {/* музыка */}
-      <audio
-        ref={audioRef}
-        loop
-        src="https://files.catbox.moe/0r4h8w.mp3"
-      />
+      <audio ref={audioRef} loop>
+        <source
+          src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8e2b4f7.mp3?filename=romantic-piano-112194.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
 
       {/* glow */}
       <div
@@ -130,7 +131,10 @@ export default function GardenPage() {
 
         {/* музыка */}
         <button
-          onClick={() => audioRef.current.play()}
+          onClick={() => {
+            audioRef.current.volume = 0.5;
+            audioRef.current.play();
+          }}
           style={{
             marginTop: "45px",
             padding: "18px 42px",

@@ -3,141 +3,103 @@ export default function GardenPage() {
     <main
       style={{
         minHeight: "100vh",
-        background:
-          "linear-gradient(180deg, #fff8fb 0%, #ffeef5 50%, #fff9fc 100%)",
-        padding: "60px 20px",
+        background: "#fff7fb",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
         fontFamily: "serif",
-        position: "relative",
-        overflow: "hidden",
+        padding: "40px",
+        textAlign: "center",
       }}
     >
-      {/* фон */}
-      <div
+      <h1
         style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "radial-gradient(#ffd6e7 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-          opacity: 0.35,
-        }}
-      />
-
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          maxWidth: "1200px",
-          margin: "0 auto",
-          textAlign: "center",
+          fontSize: "60px",
+          color: "#5e3b47",
+          marginBottom: "20px",
         }}
       >
-        <h1
-          style={{
-            fontSize: "64px",
-            color: "#5e3b47",
-            marginBottom: "15px",
-          }}
+        ✿ сад воспоминаний ✿
+      </h1>
+
+      <p
+        style={{
+          fontSize: "22px",
+          color: "#7d5b66",
+          maxWidth: "700px",
+          lineHeight: "1.8",
+        }}
+      >
+        некоторые чувства остаются навсегда
+      </p>
+
+      <div
+        style={{
+          marginTop: "50px",
+          display: "flex",
+          gap: "20px",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
+        <button
+          onClick={() =>
+            alert("я подумал что ты выскочка 😭🌸")
+          }
+          style={buttonStyle}
         >
-          ✿ сад воспоминаний ✿
-        </h1>
+          🌸 первая мысль
+        </button>
 
-        <p
-          style={{
-            color: "#8c6875",
-            fontSize: "20px",
-            marginBottom: "60px",
-          }}
+        <button
+          onClick={() =>
+            alert(
+              "тогда в маленькой библиотеке ты случайно или специально легла ко мне на колени и заснула 🤍"
+            )
+          }
+          style={buttonStyle}
         >
-          некоторые чувства остаются навсегда
-        </p>
+          📖 случайность
+        </button>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "30px",
-          }}
+        <button
+          onClick={() =>
+            alert(
+              "сначала были смешанные чувства, а теперь привязанность и ощущение влюблённости ✨"
+            )
+          }
+          style={buttonStyle}
         >
-          {/* карточка 1 */}
-          <div
-            onClick={() =>
-              alert(
-                "я подумал что ты выскочка 😭🌸"
-              )
-            }
-            style={cardStyle}
-          >
-            <h2 style={titleStyle}>🌸 первая мысль</h2>
-            <p style={textStyle}>нажми чтобы открыть</p>
-          </div>
-
-          {/* карточка 2 */}
-          <div
-            onClick={() =>
-              alert(
-                "тогда в маленькой библиотеке ты случайно или специально легла ко мне на колени и заснула 🤍"
-              )
-            }
-            style={cardStyle}
-          >
-            <h2 style={titleStyle}>📖 случайность</h2>
-            <p style={textStyle}>нажми чтобы открыть</p>
-          </div>
-
-          {/* карточка 3 */}
-          <div
-            onClick={() =>
-              alert(
-                "сначала были смешанные чувства, а теперь привязанность и ощущение влюблённости ✨"
-              )
-            }
-            style={cardStyle}
-          >
-            <h2 style={titleStyle}>✨ чувство</h2>
-            <p style={textStyle}>нажми чтобы открыть</p>
-          </div>
-        </div>
-
-        <a
-          href="/letter"
-          style={{
-            display: "inline-block",
-            marginTop: "70px",
-            padding: "18px 40px",
-            borderRadius: "999px",
-            background: "#ffdce9",
-            color: "#5c3b46",
-            fontSize: "22px",
-            textDecoration: "none",
-            boxShadow: "0 10px 30px rgba(255, 182, 210, 0.4)",
-            transition: "0.3s",
-          }}
-        >
-          ✨ узнать секрет
-        </a>
+          ✨ чувство
+        </button>
       </div>
+
+      <a
+        href="/letter"
+        style={{
+          marginTop: "60px",
+          textDecoration: "none",
+          background: "#ffdce9",
+          color: "#5e3b47",
+          padding: "18px 40px",
+          borderRadius: "999px",
+          fontSize: "22px",
+        }}
+      >
+        узнать секрет ✨
+      </a>
     </main>
   );
 }
 
-const cardStyle = {
-  background: "rgba(255,255,255,0.7)",
-  backdropFilter: "blur(10px)",
-  borderRadius: "30px",
-  padding: "50px 30px",
+const buttonStyle = {
+  background: "white",
+  border: "none",
+  padding: "20px 30px",
+  borderRadius: "20px",
+  fontSize: "20px",
   cursor: "pointer",
-  boxShadow: "0 10px 30px rgba(255,192,203,0.15)",
-  transition: "0.3s",
-};
-
-const titleStyle = {
-  fontSize: "36px",
   color: "#5e3b47",
-  marginBottom: "20px",
-};
-
-const textStyle = {
-  fontSize: "18px",
-  color: "#86626d",
+  boxShadow: "0 5px 20px rgba(0,0,0,0.08)",
 };

@@ -4,33 +4,50 @@ export default function GardenPage() {
       style={{
         minHeight: "100vh",
         background:
-          "linear-gradient(180deg, #fff7fb 0%, #ffeef5 45%, #fff9fc 100%)",
+          "linear-gradient(180deg, #fff8fb 0%, #ffeef5 45%, #fff9fc 100%)",
         overflow: "hidden",
         position: "relative",
         padding: "60px 20px",
         fontFamily: "serif",
       }}
     >
-      {/* Цветы на фоне */}
+      {/* Мягкое свечение */}
       <div
         style={{
           position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "url('https://www.transparenttextures.com/patterns/flowers.png')",
-          opacity: 0.08,
-          pointerEvents: "none",
+          width: "700px",
+          height: "700px",
+          background: "#ffd9ea",
+          borderRadius: "50%",
+          filter: "blur(140px)",
+          top: "-200px",
+          left: "-150px",
+          opacity: 0.35,
         }}
       />
 
-      {/* Плавающие цветочки */}
+      <div
+        style={{
+          position: "absolute",
+          width: "600px",
+          height: "600px",
+          background: "#ffeef6",
+          borderRadius: "50%",
+          filter: "blur(140px)",
+          bottom: "-200px",
+          right: "-150px",
+          opacity: 0.45,
+        }}
+      />
+
+      {/* Цветочки */}
       <div
         style={{
           position: "absolute",
           top: "8%",
           left: "10%",
-          fontSize: "40px",
-          opacity: 0.4,
+          fontSize: "42px",
+          opacity: 0.45,
         }}
       >
         🌸
@@ -39,9 +56,9 @@ export default function GardenPage() {
       <div
         style={{
           position: "absolute",
-          top: "20%",
-          right: "15%",
-          fontSize: "50px",
+          top: "18%",
+          right: "14%",
+          fontSize: "54px",
           opacity: 0.3,
         }}
       >
@@ -51,10 +68,10 @@ export default function GardenPage() {
       <div
         style={{
           position: "absolute",
-          bottom: "18%",
-          left: "20%",
-          fontSize: "45px",
-          opacity: 0.3,
+          bottom: "16%",
+          left: "18%",
+          fontSize: "48px",
+          opacity: 0.35,
         }}
       >
         🌷
@@ -65,8 +82,8 @@ export default function GardenPage() {
           position: "absolute",
           bottom: "10%",
           right: "12%",
-          fontSize: "55px",
-          opacity: 0.3,
+          fontSize: "56px",
+          opacity: 0.35,
         }}
       >
         🌸
@@ -76,10 +93,12 @@ export default function GardenPage() {
       <h1
         style={{
           textAlign: "center",
-          fontSize: "56px",
-          color: "#5e3b4c",
-          marginBottom: "15px",
+          fontSize: "58px",
+          color: "#5b3948",
+          marginBottom: "12px",
           fontWeight: "300",
+          position: "relative",
+          zIndex: 2,
         }}
       >
         маленький сад воспоминаний
@@ -90,7 +109,9 @@ export default function GardenPage() {
           textAlign: "center",
           color: "#866575",
           fontSize: "20px",
-          marginBottom: "70px",
+          marginBottom: "55px",
+          position: "relative",
+          zIndex: 2,
         }}
       >
         некоторые вещи хочется сохранить чуть дольше 🌸
@@ -100,24 +121,24 @@ export default function GardenPage() {
       <div
         style={{
           display: "flex",
-          gap: "30px",
+          gap: "28px",
           justifyContent: "center",
           flexWrap: "wrap",
+          position: "relative",
+          zIndex: 2,
         }}
       >
         {/* Карточка 1 */}
         <div
           onClick={() =>
-            alert(
-              "🌸 я подумал что ты выскочка 😭"
-            )
+            alert("🌸 я подумал что ты выскочка 😭")
           }
           style={{
             width: "320px",
-            background: "rgba(255,255,255,0.65)",
+            background: "rgba(255,255,255,0.68)",
             borderRadius: "30px",
-            padding: "40px",
-            backdropFilter: "blur(10px)",
+            padding: "38px",
+            backdropFilter: "blur(12px)",
             boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
             cursor: "pointer",
             transition: "0.3s",
@@ -126,8 +147,8 @@ export default function GardenPage() {
           <h2
             style={{
               color: "#5c3948",
-              fontSize: "40px",
-              marginBottom: "20px",
+              fontSize: "38px",
+              marginBottom: "16px",
             }}
           >
             🌸 первая мысль
@@ -136,8 +157,8 @@ export default function GardenPage() {
           <p
             style={{
               color: "#6f5862",
-              fontSize: "20px",
-              lineHeight: "1.6",
+              fontSize: "19px",
+              lineHeight: "1.5",
             }}
           >
             нажми, чтобы открыть
@@ -153,10 +174,10 @@ export default function GardenPage() {
           }
           style={{
             width: "320px",
-            background: "rgba(255,255,255,0.65)",
+            background: "rgba(255,255,255,0.68)",
             borderRadius: "30px",
-            padding: "40px",
-            backdropFilter: "blur(10px)",
+            padding: "38px",
+            backdropFilter: "blur(12px)",
             boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
             cursor: "pointer",
             transition: "0.3s",
@@ -165,8 +186,8 @@ export default function GardenPage() {
           <h2
             style={{
               color: "#5c3948",
-              fontSize: "40px",
-              marginBottom: "20px",
+              fontSize: "38px",
+              marginBottom: "16px",
             }}
           >
             💌 случайность
@@ -175,8 +196,8 @@ export default function GardenPage() {
           <p
             style={{
               color: "#6f5862",
-              fontSize: "20px",
-              lineHeight: "1.6",
+              fontSize: "19px",
+              lineHeight: "1.5",
             }}
           >
             нажми, чтобы открыть
@@ -192,10 +213,10 @@ export default function GardenPage() {
           }
           style={{
             width: "320px",
-            background: "rgba(255,255,255,0.65)",
+            background: "rgba(255,255,255,0.68)",
             borderRadius: "30px",
-            padding: "40px",
-            backdropFilter: "blur(10px)",
+            padding: "38px",
+            backdropFilter: "blur(12px)",
             boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
             cursor: "pointer",
             transition: "0.3s",
@@ -204,8 +225,8 @@ export default function GardenPage() {
           <h2
             style={{
               color: "#5c3948",
-              fontSize: "40px",
-              marginBottom: "20px",
+              fontSize: "38px",
+              marginBottom: "16px",
             }}
           >
             ✨ чувство
@@ -214,8 +235,8 @@ export default function GardenPage() {
           <p
             style={{
               color: "#6f5862",
-              fontSize: "20px",
-              lineHeight: "1.6",
+              fontSize: "19px",
+              lineHeight: "1.5",
             }}
           >
             нажми, чтобы открыть
@@ -228,7 +249,9 @@ export default function GardenPage() {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "90px",
+          marginTop: "70px",
+          position: "relative",
+          zIndex: 2,
         }}
       >
         <button
@@ -243,7 +266,6 @@ export default function GardenPage() {
             fontSize: "26px",
             cursor: "pointer",
             boxShadow: "0 10px 30px rgba(255,182,210,0.35)",
-            transition: "0.3s",
           }}
         >
           ✨ узнать секрет

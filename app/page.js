@@ -1,169 +1,222 @@
 export default function Home() {
+  const flowers = [
+    { top: "8%", left: "10%", size: "50px", opacity: 0.35 },
+    { top: "18%", left: "82%", size: "70px", opacity: 0.2 },
+    { top: "72%", left: "14%", size: "65px", opacity: 0.25 },
+    { top: "78%", left: "85%", size: "55px", opacity: 0.3 },
+    { top: "45%", left: "6%", size: "45px", opacity: 0.18 },
+    { top: "58%", left: "92%", size: "60px", opacity: 0.2 },
+    { top: "30%", left: "40%", size: "35px", opacity: 0.15 },
+    { top: "15%", left: "55%", size: "40px", opacity: 0.18 },
+  ];
+
   return (
     <main
       style={{
         minHeight: "100vh",
-        background:
-          "linear-gradient(180deg, #fff8f8 0%, #ffeef5 40%, #fff5ef 100%)",
         overflow: "hidden",
         position: "relative",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         padding: "40px",
+        background: `
+          radial-gradient(circle at top right, #ffdbe7 0%, transparent 35%),
+          radial-gradient(circle at bottom left, #fff1f5 0%, transparent 40%),
+          linear-gradient(180deg, #fffdfd 0%, #fff3f7 45%, #fff7f1 100%)
+        `,
         fontFamily: "serif",
       }}
     >
-      {/* большие световые пятна */}
+      {/* ГЛОУ */}
+      <div
+        style={{
+          position: "absolute",
+          width: "900px",
+          height: "900px",
+          borderRadius: "50%",
+          background: "rgba(255,192,203,0.25)",
+          filter: "blur(120px)",
+          top: "-350px",
+          right: "-250px",
+        }}
+      />
+
       <div
         style={{
           position: "absolute",
           width: "700px",
           height: "700px",
           borderRadius: "50%",
-          background: "rgba(255,182,193,0.30)",
-          filter: "blur(100px)",
-          top: "-250px",
-          right: "-150px",
-        }}
-      />
-
-      <div
-        style={{
-          position: "absolute",
-          width: "600px",
-          height: "600px",
-          borderRadius: "50%",
           background: "rgba(255,255,255,0.95)",
-          filter: "blur(80px)",
-          bottom: "-200px",
-          left: "-150px",
+          filter: "blur(100px)",
+          bottom: "-300px",
+          left: "-200px",
         }}
       />
+
+      {/* ЦВЕТЫ */}
+      {flowers.map((flower, index) => (
+        <div
+          key={index}
+          style={{
+            position: "absolute",
+            top: flower.top,
+            left: flower.left,
+            fontSize: flower.size,
+            opacity: flower.opacity,
+            transform: "rotate(-10deg)",
+            userSelect: "none",
+          }}
+        >
+          🌸
+        </div>
+      ))}
+
+      {/* ЛЕПЕСТКИ */}
+      <div
+        style={{
+          position: "absolute",
+          top: "12%",
+          left: "25%",
+          fontSize: "22px",
+          opacity: "0.4",
+        }}
+      >
+        ✿
+      </div>
 
       <div
         style={{
           position: "absolute",
-          width: "500px",
-          height: "500px",
-          borderRadius: "50%",
-          background: "rgba(255,220,230,0.45)",
-          filter: "blur(90px)",
-          top: "200px",
-          left: "30%",
-        }}
-      />
-
-      {/* лепестки */}
-      <div
-        style={{
-          position: "absolute",
-          top: "80px",
-          left: "100px",
-          fontSize: "70px",
+          top: "70%",
+          left: "60%",
+          fontSize: "28px",
           opacity: "0.25",
         }}
       >
-        🌸
+        ❀
       </div>
 
       <div
         style={{
           position: "absolute",
-          bottom: "120px",
-          right: "140px",
-          fontSize: "90px",
+          top: "30%",
+          left: "75%",
+          fontSize: "18px",
           opacity: "0.2",
         }}
       >
-        🌸
+        ✿
       </div>
 
+      {/* СТЕКЛЯННАЯ КАРТОЧКА */}
       <div
         style={{
-          maxWidth: "950px",
-          textAlign: "center",
+          position: "relative",
           zIndex: 2,
+          width: "100%",
+          maxWidth: "950px",
+          padding: "90px 70px",
+          borderRadius: "40px",
+          background: "rgba(255,255,255,0.45)",
+          backdropFilter: "blur(18px)",
+          border: "1px solid rgba(255,255,255,0.6)",
+          boxShadow: "0 25px 80px rgba(255,182,193,0.25)",
+          textAlign: "center",
         }}
       >
+        {/* верхняя надпись */}
         <p
           style={{
-            color: "#d98ca2",
-            letterSpacing: "6px",
+            color: "#d28ca0",
+            letterSpacing: "8px",
             textTransform: "uppercase",
             fontSize: "12px",
-            marginBottom: "30px",
-          }}
-        >
-          private story for elina
-        </p>
-
-        <h1
-          style={{
-            fontSize: "78px",
-            color: "#4a2d35",
-            fontWeight: "400",
-            lineHeight: "1.1",
             marginBottom: "35px",
           }}
         >
-          Некоторые люди
+          a story made with feelings
+        </p>
+
+        {/* ЗАГОЛОВОК */}
+        <h1
+          style={{
+            fontSize: "82px",
+            lineHeight: "1.08",
+            color: "#4f2f38",
+            fontWeight: "400",
+            marginBottom: "45px",
+            textShadow: "0 5px 25px rgba(255,255,255,0.7)",
+          }}
+        >
+          Иногда
+          <br />
+          самые важные люди
           <br />
           появляются
           <br />
-          слишком неожиданно.
+          совершенно случайно.
         </h1>
 
+        {/* ТЕКСТ */}
         <p
           style={{
+            color: "#7d6068",
             fontSize: "25px",
-            color: "#7b5b63",
-            lineHeight: "1.9",
-            maxWidth: "720px",
+            lineHeight: "2",
+            maxWidth: "760px",
             margin: "0 auto",
           }}
         >
-          И в какой-то момент
+          И сначала это выглядит
           <br />
-          обычной ночью
+          как обычный разговор.
           <br />
-          ты понимаешь,
+          Как ещё один вечер.
           <br />
-          что человек стал для тебя
+          Как что-то временное.
           <br />
-          чем-то гораздо большим.
+          <br />
+          Но потом человек
+          <br />
+          становится местом,
+          <br />
+          куда хочется возвращаться.
         </p>
 
+        {/* КНОПКА */}
         <a
           href="/story"
           style={{
             display: "inline-block",
-            marginTop: "65px",
-            padding: "20px 46px",
-            background:
-              "linear-gradient(135deg, #ffffff 0%, #ffe4ec 100%)",
-            color: "#7b4c5a",
+            marginTop: "70px",
+            padding: "22px 54px",
             borderRadius: "999px",
+            background:
+              "linear-gradient(135deg, #ffffff 0%, #ffe3ec 100%)",
+            color: "#7b4e5c",
             textDecoration: "none",
-            fontSize: "20px",
+            fontSize: "21px",
             fontWeight: "600",
-            boxShadow: "0 15px 35px rgba(255,182,193,0.45)",
-            border: "1px solid rgba(255,255,255,0.7)",
-            transition: "0.3s",
+            boxShadow:
+              "0 20px 40px rgba(255,182,193,0.35)",
+            border: "1px solid rgba(255,255,255,0.8)",
           }}
         >
-          ✨ начать историю
+          ✨ открыть историю
         </a>
 
+        {/* НИЗ */}
         <div
           style={{
-            marginTop: "90px",
-            color: "#d6a5b4",
-            fontSize: "18px",
-            letterSpacing: "3px",
+            marginTop: "80px",
+            color: "#d3a3b1",
+            fontSize: "17px",
+            letterSpacing: "4px",
           }}
         >
-          made with feelings
+          for someone special
         </div>
       </div>
     </main>

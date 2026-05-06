@@ -34,19 +34,6 @@ export default function StoryPage() {
         }}
       />
 
-      <div
-        style={{
-          position: "absolute",
-          width: "500px",
-          height: "500px",
-          background: "rgba(255,255,255,0.9)",
-          borderRadius: "50%",
-          filter: "blur(90px)",
-          bottom: "-180px",
-          left: "-100px",
-        }}
-      />
-
       {/* цветы */}
       {[
         ["8%", "10%", "70px"],
@@ -71,31 +58,6 @@ export default function StoryPage() {
         </div>
       ))}
 
-      {/* лепестки */}
-      <div
-        style={{
-          position: "absolute",
-          top: "20%",
-          left: "40%",
-          fontSize: "22px",
-          opacity: 0.2,
-        }}
-      >
-        ✿
-      </div>
-
-      <div
-        style={{
-          position: "absolute",
-          top: "60%",
-          left: "70%",
-          fontSize: "26px",
-          opacity: 0.2,
-        }}
-      >
-        ❀
-      </div>
-
       {/* карточка */}
       <div
         style={{
@@ -112,7 +74,6 @@ export default function StoryPage() {
           textAlign: "center",
         }}
       >
-        {/* верх */}
         <p
           style={{
             color: "#ca8e9d",
@@ -125,7 +86,6 @@ export default function StoryPage() {
           chapter one
         </p>
 
-        {/* заголовок */}
         <h1
           style={{
             fontSize: "72px",
@@ -140,7 +100,6 @@ export default function StoryPage() {
           неожиданно.
         </h1>
 
-        {/* текст */}
         <div
           style={{
             color: "#73545e",
@@ -186,7 +145,13 @@ export default function StoryPage() {
 
         {/* кнопка */}
         <button
-          onClick={() => setClicked(!clicked)}
+          onClick={() => {
+            if (clicked) {
+              window.location.href = "/garden";
+            } else {
+              setClicked(true);
+            }
+          }}
           style={{
             marginTop: "65px",
             padding: "22px 55px",
@@ -206,7 +171,9 @@ export default function StoryPage() {
             transition: "all 0.35s ease",
           }}
         >
-          {clicked ? "💗 ты нажала..." : "✨ прикоснуться"}
+          {clicked
+            ? "🌸 войти в сад воспоминаний"
+            : "✨ прикоснуться"}
         </button>
 
         {/* скрытый текст */}
@@ -217,7 +184,6 @@ export default function StoryPage() {
               color: "#8a6571",
               fontSize: "24px",
               lineHeight: "1.8",
-              animation: "fade 0.6s ease",
             }}
           >
             Иногда
@@ -227,7 +193,6 @@ export default function StoryPage() {
           </div>
         )}
 
-        {/* низ */}
         <div
           style={{
             marginTop: "70px",
